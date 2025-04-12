@@ -26,6 +26,37 @@ This project is a Quiz Application created in Java. It allows users to create, e
    - Track the operations performed and provide a summary report.
 ---
 ### Documentation:
+**Algorithms:**
+1. Main Class: The Main class is the central controller of the quiz 
+application. It:
+   - Displays the menu.
+   - Reads user input.
+   - Performs actions (add, delete, edit, take quiz, etc.).
+   - Tracks how many times each operation is performed.
+   - Coordinates with other classes like Quiz and Question.
+2. main() Method – Entry Point:    
+Scanner is created to read keyboard input. Quiz object is created to store and manage the quiz questions.
+3. Menu Loop
+Runs an infinite loop to keep the app active until the user chooses to exit. Displays menu options. Reads the user’s choice.
+4. switch (number) – Handles User Choices: Each menu option is handled using a switch statement.
+   - Calls createQuestion() to get input for a new question.
+   - Adds it to the quiz.
+   - Records the operation for the report.
+   - Displays all questions one by one.
+   - Accepts user answers.
+   - Checks correctness and counts the score.
+   - Saves the quiz questions into a file called quiz.csv.
+5. Operation(String operation) Method: Keeps track of how many times a specific action (like adding, deleting) was performed.
+6. showReport() Method: Displays the number of times each action was performed.
+7. File Handling Methods
+   - saveToCSV() – Writes the quiz to a CSV file.
+   - readData() – Reads the quiz from a CSV file and loads it into memory.
+8. createQuestion(Scanner input) Method
+   - Asks the user to enter a question.
+   - Takes 4 answer options.
+   - Asks which option is the correct one.
+   - Returns a Question object.
+
 **Data Structures:**
 HashMap: Used to track the number of times each operation is performed. This allows easy reporting of the frequency of actions such as adding, deleting, and changing questions. ArrayList: Used to store quiz questions and options dynamically. It provides flexibility in managing the questions, adding new ones, and modifying existing ones.
 
